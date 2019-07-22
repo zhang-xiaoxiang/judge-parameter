@@ -22,8 +22,37 @@ public class UserServiceImpl implements UserService {
     // @Autowired
     // private UserDao userDao;
 
+    // /**
+    //  * 新增用户--------------没有使用需要些一大堆判断参数为空
+    //  *
+    //  * @param user
+    //  * @return
+    //  */
+    // @Override
+    // public Integer addUser(User user) {
+    //     //一大堆判断user的属性是否为空
+    //     if (StringUtils.isBlank(user.getUserName())) {
+    //         throw new MyException("(自定义异常)用户名不能为空!");
+    //     }
+    //     if (StringUtils.isBlank(user.getUserPassword())) {
+    //         throw new MyException("(自定义异常)密码不能为空!");
+    //     }
+    //     if (StringUtils.isBlank(user.getUserEmail())) {
+    //         throw new MyException("(自定义异常)邮箱不能为空!");
+    //     }
+    //     if (StringUtils.isBlank(user.getUserPhone())){
+    //         throw new MyException("(自定义异常)电话号码不能为空!");
+    //     }
+    //     //..........此处省略一大堆非空判断..........
+    //
+    //     //下面链接数据库,没有实现,知道大概流程就行了
+    //     //userDao.addUser(user);
+    //     //如果参数均正常不为空,那么模拟返回数据库这个  1
+    //     return 1;
+    // }
+
     /**
-     * 新增用户
+     * 新增用户 --------AOP处理参数后省去一大堆if判断参数
      *
      * @param user
      * @return
@@ -31,18 +60,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public Integer addUser(User user) {
         //一大堆判断user的属性是否为空
-        if (StringUtils.isBlank(user.getUserName())) {
-            throw new MyException("用户名不能为空!");
-        }
-        if (StringUtils.isBlank(user.getUserPassword())) {
-            throw new MyException("密码不能为空!");
-        }
-        if (StringUtils.isBlank(user.getUserEmail())) {
-            throw new MyException("邮箱不能为空!");
-        }
-        if (StringUtils.isBlank(user.getUserPhone())){
-            throw new MyException("电话号码不能为空!");
-        }
         //..........此处省略一大堆非空判断..........
 
         //下面链接数据库,没有实现,知道大概流程就行了
@@ -50,4 +67,12 @@ public class UserServiceImpl implements UserService {
         //如果参数均正常不为空,那么模拟返回数据库这个  1
         return 1;
     }
+
+
+
+
+
+
+
+
 }
