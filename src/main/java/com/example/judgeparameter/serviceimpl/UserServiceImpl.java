@@ -1,11 +1,8 @@
 package com.example.judgeparameter.serviceimpl;
 
-import com.example.judgeparameter.dao.UserDao;
 import com.example.judgeparameter.entity.User;
-import com.example.judgeparameter.exception.MyException;
 import com.example.judgeparameter.service.UserService;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,7 +20,7 @@ public class UserServiceImpl implements UserService {
     // private UserDao userDao;
 
     // /**
-    //  * 新增用户--------------没有使用需要些一大堆判断参数为空
+    //  * 新增用户--------------没有使用需要些一大堆判断参数为空的
     //  *
     //  * @param user
     //  * @return
