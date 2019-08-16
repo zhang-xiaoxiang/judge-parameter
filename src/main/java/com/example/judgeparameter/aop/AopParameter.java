@@ -116,7 +116,7 @@ public class AopParameter {
             }
 
             // 如果type是类类型，则前面包含"class "，后面跟类名
-            if (declaredField.getGenericType().toString().equals("class java.lang.String")) {
+            if ("class java.lang.String".equals(declaredField.getGenericType().toString())) {
                 if (StringUtils.isBlank((String) fieldObject)) {
                     map.put(fieldName, "该参数不能为空!");
                     responseData.setData(map);
@@ -124,14 +124,17 @@ public class AopParameter {
                 }
             }
             // 如果是数字类型的---留着拓展的(时间类型,文件类型)
-            if (declaredField.getGenericType().toString().equals("class java.lang.Integer")
-                    || declaredField.getGenericType().toString().equals("class java.lang.Long")
-                    || declaredField.getGenericType().toString().equals("class java.lang.Double")
-                    || declaredField.getGenericType().toString().equals("class java.lang.Float")) {
+            if ("class java.lang.Integer".equals(declaredField.getGenericType().toString())
+                    || "class java.lang.Long".equals(declaredField.getGenericType().toString())
+                    || "class java.lang.Double".equals(declaredField.getGenericType().toString())
+                    /*这里是出现的实体类*/
+                    || "com.example.judgeparameter.entity.Car".equals(declaredField.getGenericType().toString())
+                    || "class java.lang.Float".equals(declaredField.getGenericType().toString())) {
                 if (fieldObject == null) {
                     map.put(fieldName, "该参数不能为空!");
                     responseData.setData(map);
                 }
+                System.out.println("进入了判断类型==========================");
 
             }
 

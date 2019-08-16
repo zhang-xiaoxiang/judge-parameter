@@ -1,6 +1,7 @@
 package com.example.judgeparameter.entity;
 
 
+import com.example.judgeparameter.aop.RequestRequire;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -45,6 +46,12 @@ public class User implements Serializable {
      * 用户邮箱地址---
      */
     private String userEmail;
+
+    /**
+     * 汽车(对象属性)
+     */
+
+    // private Car car;
 
 
 }
